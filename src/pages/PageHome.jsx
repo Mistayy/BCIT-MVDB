@@ -8,7 +8,7 @@ const PageHome = () => {
         document.title = `${appTitle} - Home`;
     }, []);
 
-    const movieRating = 20;
+    const movieRating = 80;
     return (
         <main>
             <section>

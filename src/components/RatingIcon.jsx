@@ -4,17 +4,14 @@ const RatingIcon = ({ rating }) => {
   // Ensure rating is between 0 and 100
   const percentage = Math.min(100, Math.max(0, rating));
 
-  // Calculate the dash value for the rating ring
-  const dashValue = (percentage / 100) * 1000;
 
-  // Styles for the rating ring (outer ring)
+  // Styles for the rating ring 
   const ratingRingStyles = {
     width: '100%',
     height: '100%',
-    borderRadius: '100%',
-    background: 'transparent',
-    border: `12px solid #FFC44D`,
-    borderImage: `conic-gradient(#FFC44D ${dashValue}deg, transparent ${dashValue}deg)`,
+    border:'1px solid black',
+    borderRadius: '50%',
+    background: `conic-gradient(#FFC44D ${percentage}%, transparent ${percentage}%)`,
     borderImageSlice: '1',
     position: 'absolute',
     overflow: 'hidden', 
@@ -22,11 +19,11 @@ const RatingIcon = ({ rating }) => {
 
   // Styles for the outline ring (inner ring)
   const outlineRingStyles = {
-    width: '63px',
-    height: '63px',
+    width: '50px',
+    height: '50px',
     borderRadius: '50%',
     backgroundColor: '#4A3F29',
-    border: '2px solid black',
+    border: '1px solid black',
     position: 'relative',
     overflow: 'hidden', 
     top: '0',
@@ -40,14 +37,14 @@ const RatingIcon = ({ rating }) => {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     color: 'white',
-    fontSize: '16px',
+    fontSize: '13px',
     fontWeight: 'bold',
   };
 
   // Styles for the inner circle (background for rating text)
   const innerCircleStyles = {
-    width: 'calc(100% - 26px)',
-    height: 'calc(100% - 26px)',
+    width: 'calc(100% - 20px)',
+    height: 'calc(100% - 20px)',
     borderRadius: '50%',
     backgroundColor: 'black',
     position: 'absolute',
@@ -59,8 +56,8 @@ const RatingIcon = ({ rating }) => {
   return (
     <div style={outlineRingStyles}>
       <div style={ratingRingStyles}></div>
-      {/* <div style={innerCircleStyles}></div>
-      <div style={ratingTextStyles}>{percentage}%</div> */}
+      <div style={innerCircleStyles}></div>
+      <div style={ratingTextStyles}>{percentage}<sup>%</sup></div>
     </div>
   );
 };

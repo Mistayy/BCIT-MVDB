@@ -1,1 +1,1 @@
-export const appTitle = 'MovieDB';
+export const appTitle = 'Wizlen';
