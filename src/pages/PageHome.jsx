@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { appTitle } from '../globals/globals';
+import RatingIcon from '../components/RatingIcon';
 
 const PageHome = () => {
 
@@ -7,6 +8,7 @@ const PageHome = () => {
         document.title = `${appTitle} - Home`;
     }, []);
 
+    const movieRating = 20;
     return (
         <main>
             <section>
@@ -19,6 +21,9 @@ const PageHome = () => {
                     <h2>Article 02</h2>
                     <p>Accusamus tempora assumenda laborum aliquam totam, perferendis optio delectus porro molestias odio, nostrum quidem maiores, illo impedit quod dignissimos ut eligendi. Veritatis quis ea est nisi ad accusamus et ullam.</p>
                 </article>
+            </section>
+            <section>
+                <RatingIcon rating={movieRating} />
             </section>
         </main>
     );
