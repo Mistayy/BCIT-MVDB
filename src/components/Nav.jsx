@@ -15,7 +15,7 @@ const Nav = ({ handleShowHideNav }) => {
     return (
         <nav className="main-nav" onClick={closeNav}>
             <ul>
-                <li><NavLink to="/" >Home</NavLink></li>
+                <li><NavLink to="/" >Movies</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
                 <li><NavLink to="/favourite">Favourite</NavLink></li>
 

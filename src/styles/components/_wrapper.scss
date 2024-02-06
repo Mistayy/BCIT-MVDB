@@ -5,7 +5,6 @@
 @use '../utilities/functions' as *;
 
 .wrapper {
-    max-width: 700px;
-    background-color: $light;
+    background-color: $backgroundColor;
     @include mc();
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import { appTitle } from '../globals/globals';
+import logoImage from "../images/logo.svg";
 
 const Header = () => {
 
@@ -28,7 +29,15 @@ const Header = () => {
 
     return (
         <header className={showNav ? 'show' : ''}>
-            <h1><Link to="/">{appTitle}</Link></h1>
+            <section className='logo-title'>
+            <Link to="/">
+                <img src={logoImage} alt="Logo" />
+            </Link>
+            <Link to="/">
+                <h1>{appTitle}</h1>
+            </Link>
+            </section>
+            
             {/**
              * HTML for the Hamburger icon modified from HTMl
              * found at this codepen:

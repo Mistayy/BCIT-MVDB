@@ -2,11 +2,73 @@
 
 @use '../base/settings' as *;
 @use '../utilities/mixins' as *;
+@use '../utilities/functions' as *;
 
 footer {
-    padding: $section-padding;
-    border-top: 1px dotted darken($grey, 20);
-    p {
-        @include flatten;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: em(600)){
+        flex-direction: row;
+    }
+
+    a{
+        text-decoration: none;
+        color:white;
+        img{
+            height:50px;
+            margin-top:10px;
+        }
+        h1{
+            @include flatten;
+            margin: 0 0 0 em(12, 32);
+            line-height: 70px;
+
+        }
+    }
+
+    .logo-title{
+        width:0;
+        height:0;
+        visibility: hidden;
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left:0px;
+        @media (min-width: em(600)){
+            visibility:visible;
+            width:30%;
+            padding-left:20px;
+        }
+    }
+    p{
+        width:50%;
+        align-items: center;
+        text-align: center;
+        padding-top:25px;
+        margin:0 auto;
+        @media (min-width: em(600)){
+            width:30%;
+        }
+
+    }
+
+    .social-media{
+        width:100%;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        gap:10px;
+        padding:10px 0;
+        a{
+            img{
+                max-height:30px;
+            }
+        }
+        @media (min-width: em(600)){
+            width:33%;
+            justify-content: flex-end;
+            padding-right:20px;
+        }
     }
 }

@@ -5,20 +5,33 @@
 @use '../utilities/mixins' as *;
 
 header {
-    background-color: $yellow;
+    background-color: $backgroundColor;
     padding: 0;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
-    h1 {
-        @include flatten;
-        margin: 0 0 0 em(12, 32);
-        line-height: 70px;
-        a {
-            text-decoration: none;
-            color: black;
+    .logo-title{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 20px;
+    }
+
+    a{
+        text-decoration: none;
+        color:white;
+        img{
+            height:50px;
+            margin-top:10px;
+        }
+        h1{
+            @include flatten;
+            margin: 0 0 0 em(12, 32);
+            line-height: 70px;
+
         }
     }
 }

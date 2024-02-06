@@ -5,9 +5,8 @@
 @use '../utilities/mixins' as *;
 
 .main-nav {
-
     width: 100%;
-    background-color: $dark;
+    background-color: $backgroundColor;
     height: 0;
     overflow: hidden;
     visibility: hidden;
@@ -16,7 +15,7 @@
     .show & {
         transition: height 0.5s ease, visibility 0s;
         visibility: visible;
-        height: 254px;
+        height: 240px;
     }
 
     ul {
@@ -27,20 +26,19 @@
         text-decoration: none;
         display: block;
         line-height: 50px;
-        font-size: 1.3em;
-        font-weight: bold;
-        padding: 0 12px;
-        @at-root .main-nav li:not(:first-child) a {
-            border-top: 1px solid $grey;
-        }
+        font-size: 20px;
+        font-family: $headingFont;
+        padding: 0 8px;
         &:hover,
         &:focus,
         &:active {
-            background-color: rgba(white, 0.2);
+            color:$yellow;
+            border-bottom: 2px solid white;
         }
     }
 
     @media (min-width: em(600)){
+        width:45%;
         height: auto;
         visibility: visible;
         transition: none;
@@ -52,6 +50,8 @@
         
         ul {
             display: flex;
+            gap:5px;
+            padding-right:20px;
         }
 
         li {
@@ -62,10 +62,7 @@
             padding: 0;
             text-align: center;
             border-top:  none;
-            @at-root .main-nav li:not(:first-child) a {
-                border-top: none;
-                border-left: 3px solid $grey;
-            }
+            font-family: $headingFont;
         }
 
     }
