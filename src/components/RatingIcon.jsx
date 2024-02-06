@@ -26,8 +26,8 @@ const RatingIcon = ({ rating }) => {
     border: '1px solid black',
     position: 'relative',
     overflow: 'hidden', 
-    top: '0',
-    left: '0',
+    top: '320px',
+    left: '3px',
   };
 
   // Styles for the rating text
@@ -54,10 +54,10 @@ const RatingIcon = ({ rating }) => {
   };
 
   return (
-    <div style={outlineRingStyles}>
-      <div style={ratingRingStyles}></div>
-      <div style={innerCircleStyles}></div>
-      <div style={ratingTextStyles}>{percentage}<sup>%</sup></div>
+    <div className='ratingIcon' style={outlineRingStyles}>
+      <div className='ratingRing'style={ratingRingStyles}></div>
+      <div className='innerCircle'style={innerCircleStyles}></div>
+      <div className='ratingTextStyles' style={ratingTextStyles}>{percentage}<sup>%</sup></div>
     </div>
   );
 };

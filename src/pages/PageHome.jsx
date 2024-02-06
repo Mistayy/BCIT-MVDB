@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { appTitle } from '../globals/globals';
 import RatingIcon from '../components/RatingIcon';
+import MovieCard from '../components/MovieCard';
 
 const PageHome = () => {
 
@@ -24,6 +25,13 @@ const PageHome = () => {
             </section>
             <section>
                 <RatingIcon rating={movieRating} />
+            </section>
+            <section>
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
+                <MovieCard />
             </section>
         </main>
     );
