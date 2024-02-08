@@ -2,6 +2,13 @@ import { useEffect } from 'react';
 import { appTitle } from '../globals/globals';
 import RatingIcon from '../components/RatingIcon';
 import MovieCard from '../components/MovieCard';
+import React, { Component } from "react";
+import Slider from "react-slick";
+import MovieRow from '../components/MovieRow';
+import Banner from '../components/Banner';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const PageHome = () => {
 
@@ -9,29 +16,34 @@ const PageHome = () => {
         document.title = `${appTitle} - Home`;
     }, []);
 
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWYyMzE0ODZlZTU1OWI4ZGRiNzZmYzRiNDE1MDM4ZiIsInN1YiI6IjY1YjdmZThlMWM2MzViMDEzMjZlODA2ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.S3KVg7wksup6_90xSDTK4yNsh_u2PRIvQ_-r_OMjJbM'
+        }
+      };
+      
+    fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+        .then(response => response.json())
+        .then(response => console.log(response.results[0].original_title))
+        .catch(err => console.error(err));
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3
+        };
     const movieRating = 80;
     return (
         <main>
             <section>
                 <h2>Home Page</h2>
-                <article>
-                    <h2>Article 01</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quas modi cupiditate iusto? Placeat, molestias expedita tempora error cumque similique amet natus eum nesciunt doloribus totam, incidunt ducimus dolores optio!</p>
-                </article>
-                <article>
-                    <h2>Article 02</h2>
-                    <p>Accusamus tempora assumenda laborum aliquam totam, perferendis optio delectus porro molestias odio, nostrum quidem maiores, illo impedit quod dignissimos ut eligendi. Veritatis quis ea est nisi ad accusamus et ullam.</p>
-                </article>
+                <Banner />
             </section>
             <section>
-                <RatingIcon rating={movieRating} />
-            </section>
-            <section>
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
+                <MovieRow/>
             </section>
         </main>
     );

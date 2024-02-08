@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import posterImage from '../images/nowhere.jpg';
 import RatingIcon from './RatingIcon';
 import heartIcon from '../images/heart-yellow.svg';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const MovieCard = ({}) => {
 
