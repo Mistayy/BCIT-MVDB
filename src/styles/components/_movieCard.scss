@@ -29,27 +29,34 @@
       
     .heartIcon{
         position: absolute;
+        background-color: transparent;
+        border:transparent;
         width:30px;
         top:12px;
         left:160px;
+
+        &:focus,
+        &:active {
+            background-color: transparent;
+            border: none;
+            outline: none; /* Optionally remove the outline */
+        }
+    }
+
+    .movie-short-info{
+      position:absolute;
+      top:$movieTitleTop;
+      font-family: $bodyFont;
+      left:10px;
+      color:$light;
     }
 
     .movie-title {
-      position:absolute;
-      display:block;
-      top:$movieTitleTop;
-      left:15px;
-      color:$light;
-      font-family: $bodyFont;
       font-size:20px;
+      font-weight: bold;
     }
 
     .movie-date{
-      position:absolute;
-      top:$movieDateTop;
-      left:15px;
-      color:$light;
-      font-family: $bodyFont;
       font-size:17px;
       font-weight: normal;
     }
@@ -59,4 +66,43 @@
       top:$movieCardHeight - 20;
       left:13px;
     }
+
+    .hover-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $movieCardWidth;
+      height: $movieCardHeight;
+      background-color: rgba(0, 0, 0, 0.4); 
+      border-radius: $border-radius;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      color: white;
+      font-size: 16px;
+      transition: opacity 0.3s ease; /* Optional: Adding transition effect */
+  }
+  
+  .movie-info {
+      margin-bottom: 5px;
+  }
+  
+  .more-info-btn {
+      background-color: #ffffff; /* Button background color */
+      color: #000000; /* Button text color */
+      padding: 10px 18px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease; /* Optional: Adding transition effect */
+  }
+  
+  .more-info-btn:hover {
+      background-color: #cccccc; /* Button background color on hover */
+  }
+  
   }

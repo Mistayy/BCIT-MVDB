@@ -1,0 +1,18 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.movie-grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:25px;
+    margin:10px auto;
+    justify-content: center;
+
+    @media (min-width: em(600)){
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+}

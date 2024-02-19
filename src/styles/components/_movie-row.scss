@@ -2,24 +2,31 @@
 
 .movie-category-wrapper{
     margin:0 20px;
+
+    h2{
+        color:$yellow;
+    }
     .slick-list{
         margin:0 20px;
         margin-left:40px;
     }
+
     .slick-slide div{
         margin:0 auto;
     }
 
     .slider-container{
-        padding-bottom:200px;
+        padding-bottom:20px;
     }
 
 
     .slick-next{
         right:10px;
+        top:calc($movieCardHeight/2);
     }
     .slick-prev{
         left:-10px;
+        top:calc($movieCardHeight/2);
     }
     
     .slick-next::before,

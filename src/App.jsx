@@ -1,10 +1,15 @@
 import AppRouter from './routers/AppRouter'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 import './styles/styles.scss'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
     <>
-        <AppRouter />
+        <Provider store={store}>
+            <AppRouter />
+        </Provider>
     </>
   )
 }

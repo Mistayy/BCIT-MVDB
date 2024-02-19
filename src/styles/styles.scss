@@ -17,6 +17,8 @@
 @use './components/banner';
 @use './components/movie-detail';
 @use './components/movie-row';
+@use './components/movie-grid';
+@use './components/search-bar';
 
 // Utilities
 @use './utilities/utility-classes';

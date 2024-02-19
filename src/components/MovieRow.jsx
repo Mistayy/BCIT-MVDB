@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MovieCard from "./MovieCard";
+import { movieDBoptions } from '../globals/globals';
 
 
 function MovieRow({category}) {
@@ -42,24 +43,11 @@ function MovieRow({category}) {
           slidesToShow: 2,
           slidesToScroll: 2,
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
       }
     ]
   };
 
-  const movieDBoptions = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWYyMzE0ODZlZTU1OWI4ZGRiNzZmYzRiNDE1MDM4ZiIsInN1YiI6IjY1YjdmZThlMWM2MzViMDEzMjZlODA2ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.S3KVg7wksup6_90xSDTK4yNsh_u2PRIvQ_-r_OMjJbM'
-    }
-  };
+
 
   var fetchUrl = 'https://api.themoviedb.org/3/movie/' + category + '?language=en-US&page=1';
   const [movies, setMovies] = useState([]);
@@ -106,6 +94,8 @@ function MovieRow({category}) {
               title={movie.title}
               releaseDate={movie.release_date}
               posterImagePath={movie.poster_path}
+              intro={movie.overview}
+              movieId = {movie.id}
             />
           ))}
       </Slider>
