@@ -10,6 +10,7 @@ import PageHome from '../pages/PageHome';
 import PageAbout from '../pages/PageAbout';
 import PageFavourite from '../pages/PageFavourite';
 import PageNotFound from '../pages/PageNotFound';
+import PageDetail from '../pages/PageDetail';
 
 function AppRouter() {
   return (
@@ -18,6 +19,7 @@ function AppRouter() {
         <Header />
           <Routes>
             <Route path="/" exact element={<PageHome />} />
+            <Route path="/movie-details/:id" element={<PageDetail />} />
             <Route path="/about" element={<PageAbout />} />
             <Route path="/favourite" element={<PageFavourite />} />
             <Route path="*" element={<PageNotFound />} />

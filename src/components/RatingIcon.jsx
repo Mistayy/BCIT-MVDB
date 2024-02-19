@@ -26,8 +26,6 @@ const RatingIcon = ({ rating }) => {
     border: '1px solid black',
     position: 'relative',
     overflow: 'hidden', 
-    top: '320px',
-    left: '3px',
   };
 
   // Styles for the rating text

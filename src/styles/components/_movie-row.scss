@@ -1,0 +1,33 @@
+@use '../base/settings' as *;
+
+.movie-category-wrapper{
+    margin:0 20px;
+    .slick-list{
+        margin:0 20px;
+        margin-left:40px;
+    }
+    .slick-slide div{
+        margin:0 auto;
+    }
+
+    .slider-container{
+        padding-bottom:200px;
+    }
+
+
+    .slick-next{
+        right:10px;
+    }
+    .slick-prev{
+        left:-10px;
+    }
+    
+    .slick-next::before,
+    .slick-prev::before {
+        font-size: 30px; 
+        color: $yellow; 
+    }
+
+    
+
+}

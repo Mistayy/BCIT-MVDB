@@ -1,0 +1,15 @@
+.page-wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:10px;
+    .movie-poster{
+        width:40%;
+        img{
+            width:100%;
+        }
+    }
+    .detail-wrapper{
+        width:100%;
+    }
+}

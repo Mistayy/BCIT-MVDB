@@ -5,6 +5,7 @@
 @use './base/type';
 
 // Components
+@use './components/components';
 @use './components/body';
 @use './components/wrapper';
 @use './components/header';
@@ -14,6 +15,8 @@
 @use './components/footer';
 @use './components/movieCard';
 @use './components/banner';
+@use './components/movie-detail';
+@use './components/movie-row';
 
 // Utilities
 @use './utilities/utility-classes';

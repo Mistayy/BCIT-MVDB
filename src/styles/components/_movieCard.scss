@@ -3,7 +3,7 @@
 
 .movie-card{
     position:relative;
-    width:247px;
+    width:$movieCardWidth;
     height:488px;
     padding:0;
     margin:0;
@@ -12,44 +12,51 @@
         position:absolute;
         top: 0;
         left:0;
-        width: 230px;
+        width: $movieCardWidth;
         overflow: hidden;
         border-radius: $border-radius;
     }
+
     .img-shadow {
         position: absolute; 
         top: 5px; 
         left: 5px; 
-        width: 230px; 
-        height: 345px; 
+        width: $movieCardWidth; 
+        height: $movieCardHeight; 
         border-radius: $border-radius;
         background: rgb(0, 0, 0);
       }
       
     .heartIcon{
         position: absolute;
+        width:30px;
         top:12px;
-        left:190px;
-        width:38px;
-        height:33.25px;
+        left:160px;
     }
 
-      .movie-title {
-        position:absolute;
-        top:390px;
-        left:15px;
-        color:$light;
-        font-family: $bodyFont;
-        font-size:20px;
-      }
-
-      .movie-date{
-        position:absolute;
-        top:420px;
-        left:15px;
-        color:$light;
-        font-family: $bodyFont;
-        font-size:13px;
-        font-weight: normal;
-      }
+    .movie-title {
+      position:absolute;
+      display:block;
+      top:$movieTitleTop;
+      left:15px;
+      color:$light;
+      font-family: $bodyFont;
+      font-size:20px;
     }
+
+    .movie-date{
+      position:absolute;
+      top:$movieDateTop;
+      left:15px;
+      color:$light;
+      font-family: $bodyFont;
+      font-size:17px;
+      font-weight: normal;
+    }
+
+    .rating-icon-wrapper{
+      position: absolute;
+      top:$movieCardHeight - 20;
+      left:13px;
+    }
+  }

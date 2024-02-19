@@ -5,15 +5,4 @@
 
 main {
     padding: $section-padding;
-
-    article {
-        border: 1px dotted darken($grey, 30);
-        padding: em(20);
-        margin-bottom: em(20);
-        p:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-
 }

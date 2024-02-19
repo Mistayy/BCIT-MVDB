@@ -14,6 +14,11 @@ $backgroundColor:#28282B;
 $bodyFont: 'Roboto', sans-serif;
 $headingFont: 'Bagel Fat One', sans-serif;
 
+//width & height
+$movieCardWidth: 200px;
+$movieCardHeight: $movieCardWidth * 1.5;
+$movieTitleTop: $movieCardHeight + 40;
+$movieDateTop:$movieCardHeight + 100;
 
 $border-radius:5%;
 
