@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import { appTitle } from '../globals/globals';
 import logoImage from "../images/logo.svg";
+import React from 'react';
 
 const Header = () => {
 

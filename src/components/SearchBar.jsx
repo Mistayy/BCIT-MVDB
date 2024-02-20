@@ -12,7 +12,7 @@ const Search = () => {
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      window.location.href = `/search/${searchTerm}`;
+      window.location.href = `movie-wizlen/search/${searchTerm}`;
     }
   };
 

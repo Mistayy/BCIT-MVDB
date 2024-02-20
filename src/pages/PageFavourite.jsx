@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { appTitle } from '../globals/globals';
 import MovieCard from '../components/MovieCard';
 import { useSelector,useDispatch } from 'react-redux';
-import { movieDBoptions } from '../globals/globals';
+import React from 'react';
 import { fetchMovieDataById } from '../utilities/utilities';
 
 const PageFavourite = () => {

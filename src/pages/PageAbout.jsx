@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { appTitle } from '../globals/globals';
+import React from 'react';
 
 const PageAbout = () => {
 

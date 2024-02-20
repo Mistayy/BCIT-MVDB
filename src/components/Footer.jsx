@@ -1,3 +1,4 @@
+import React from 'react';
 import { getYear } from '../utilities/utilities';
 import { Link } from 'react-router-dom'; 
 import { appTitle } from '../globals/globals';

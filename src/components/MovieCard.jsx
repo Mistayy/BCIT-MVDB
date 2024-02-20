@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addFav, deleteFav } from '../features/favs/favsSlice';
 import { appStorageName } from '../globals/globals';
+import React from 'react';
 
 const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => {
 

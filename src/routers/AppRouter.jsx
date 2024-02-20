@@ -12,10 +12,12 @@ import PageFavourite from '../pages/PageFavourite';
 import PageNotFound from '../pages/PageNotFound';
 import PageDetail from '../pages/PageDetail';
 import PageSearchResult from '../pages/PageSearchResult';
+import { APP_FOLDER_NAME } from "../globals";
+import React from 'react';
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={`/${APP_FOLDER_NAME}`}>
       <div className="wrapper">
         <Header />
           <Routes>
