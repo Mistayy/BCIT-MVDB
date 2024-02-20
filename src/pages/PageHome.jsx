@@ -23,14 +23,22 @@ const PageHome = () => {
                 <Search />
             </section>
             <section className='movie-category-wrapper'>
-                <h2>Popular</h2>
-                <MovieRow category='popular'/>
-                <h2>Now Playing</h2>
-                <MovieRow category='now_playing'/>
-                <h2>Upcoming</h2>
-                <MovieRow category='upcoming'/>
-                <h2>Top Rated</h2>
-                <MovieRow category='top_rated'/>
+                <div className='popular'>
+                    <h2>Popular</h2>
+                    <MovieRow category='popular'/>
+                </div>
+                <div className='now_playing'>
+                    <h2>Now Playing</h2>
+                    <MovieRow category='now_playing'/>
+                </div>
+                <div className='upcoming'>
+                    <h2>Upcoming</h2>
+                    <MovieRow category='upcoming'/>
+                </div>
+                <div className='top Rated'>
+                        <h2>Top Rated</h2>
+                        <MovieRow category='top_rated'/>
+                </div>
             </section>
         </main>
     );

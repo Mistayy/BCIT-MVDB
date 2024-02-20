@@ -1,15 +1,54 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
 .page-wrapper{
     display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     gap:10px;
+
+    @media (min-width: em(600)){
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
     .movie-poster{
-        width:40%;
+        width:300px;
+        padding:20px;
+        margin:0 auto;
         img{
             width:100%;
         }
     }
     .detail-wrapper{
         width:100%;
+        padding:20px;
+
+        h2{
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .detail-row-one , .detail-row-two{
+            display:flex;
+            flex-direction:row;
+            gap:18px;
+
+        }
+        .detail-row-two{
+            padding-bottom: 15px;
+            .heartIcon{
+                width:55px;
+            }
+        }
+        .overview{
+            strong{
+                color:$yellow;
+                font-size: 20px;
+                font-weight:normal;
+            }
+        }
+
     }
 }

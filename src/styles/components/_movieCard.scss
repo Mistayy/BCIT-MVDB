@@ -51,9 +51,15 @@
       color:$light;
     }
 
+
     .movie-title {
       font-size:20px;
       font-weight: bold;
+      color:$light;
+    }
+
+    .movie-title:hover{
+      color:$yellow;
     }
 
     .movie-date{

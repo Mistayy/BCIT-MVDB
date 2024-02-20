@@ -26,8 +26,7 @@ const Search = () => {
                 onChange={handleChange}
                 onKeyDown={handleKeyPress} 
                 placeholder='search movie title here..'
-                onmouseout="this.value = ''; 
-                this.blur();"/>
+        />
         </form>
         <i className="fas fa-search"></i>
     </div>

@@ -5,4 +5,12 @@
 
 main {
     padding: $section-padding;
+    section{
+        padding:0 20px;
+    }
+
+    a, a:focus, a:active,a:hover{
+        text-decoration: none;
+        outline:none;
+    }
 }

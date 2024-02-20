@@ -1,66 +1,110 @@
-import { useEffect } from 'react';
+import { useEffect,useState,useContext } from 'react';
 import { appTitle } from '../globals/globals';
-import posterImage from '../images/nowhere.jpg';
 import { useParams, Link } from 'react-router-dom';
 import RatingIcon from '../components/RatingIcon';
-import heartIcon from '../images/heart-yellow.svg';
+import yellowHeartIcon from '../images/heart-yellow.svg';
+import whiteHeartIcon from '../images/heart-white.svg';
+import { fetchMovieDataById,formatRuntime,getDirector,getTrailerKey } from '../utilities/utilities';
+import { addFav, deleteFav } from '../features/favs/favsSlice';
+import { appStorageName } from '../globals/globals';
+import { useDispatch } from 'react-redux';
+import YouTube from 'react-youtube';
+// import playBtn from '../images/playBtn.svg';
+
 
 const PageDetail = () => {
     const { id } = useParams();
-    const movieObj={
-        adult: false,
-        backdrop_path: "/gFWeOJRI3vuV7bksf4m0IhvPHfx.jpg",
-        genre_ids: [
-            80,
-            18,
-            53,
-            28
-        ],
-        duration:"1h47m",
-        director:"meow",
-        id: 75780,
-        original_language: "en",
-        original_title: "Jack Reacher",
-        overview: "One morning in an ordinary town, five people are shot dead in a seemingly random attack. All evidence points to a single suspect: an ex-military sniper who is quickly brought into custody. The interrogation yields one written note: 'Get Jack Reacher!'. Reacher, an enigmatic ex-Army investigator, believes the authorities have the right man but agrees to help the sniper's defense attorney. However, the more Reacher delves into the case, the less clear-cut it appears. So begins an extraordinary chase for the truth, pitting Jack Reacher against an unexpected enemy, with a skill for violence and a secret to keep.",
-        popularity: 65.527,
-        poster_path: "/uQBbjrLVsUibWxNDGA4Czzo8lwz.jpg",
-        release_date: "2012-12-20",
-        title: "Jack Reacher",
-        video: false,
-        vote_average: 6.6,
-        vote_count: 6652
-    }
-	useEffect(() => {
+    const [movie, setMovie] = useState([]);
+    const [isFav, setIsFav] = useState(false);
+    const dispatch = useDispatch();
+    
 
-        if(!movieObj){
+    useEffect(() => {
+        const fetchMovieData = async () => {
+            const fetchedMovie = await fetchMovieDataById(id);
+            setMovie(fetchedMovie);
+            console.log(fetchedMovie)
+        };
+        fetchMovieData();
+    }, [id]);
+
+	useEffect(() => {
+        if(!movie){
             document.title = `${appTitle} - Movie Detail`;
         }else{
-            document.title = `${appTitle} - Movie Detail: ${movieObj.original_title}`;
+            document.title = `${appTitle} - Movie Detail: ${movie.title}`;
         }
 
-	}, [movieObj]);
+	}, [movie]);
+
+    useEffect(() => {
+        const favorites = JSON.parse(localStorage.getItem(appStorageName)) || [];
+        setIsFav(favorites.includes(movie.id));
+    }, [movie.id]);
+
+    const imgBaseUrl = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
+    var imgUrl = imgBaseUrl + movie.poster_path;
+    const backdropBaseUrl = 'https://image.tmdb.org/t/p/w1000_and_h450_multi_faces/';
+    var backdropUrl = backdropBaseUrl + movie.backdrop_path;
+
+    const toggleFav = () => {
+        if (!isFav) {
+            dispatch(addFav(movie.id)); 
+        } else {
+            dispatch(deleteFav(movie.id)); 
+        }
+        setIsFav(prevIsFav => !prevIsFav); 
+    };
 
     return (
-        <main>
+        <main style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backdropUrl})`, backgroundSize: 'cover' }}>
             <div className='page-wrapper'>
                 <div className="movie-poster">
-                    <img src={ posterImage } alt="nowhere poster"></img>
+                    <img src={ imgUrl } alt="nowhere poster"></img>
                 </div>
                 <div className='detail-wrapper'>
-                    <h2>{movieObj.original_title}</h2>
+                    <h2>{movie.original_title}</h2>
                     <div className='detail-row-one'>
-                        <p>{movieObj.release_date}</p>
-                        <p>{movieObj.genre_ids}</p>
-                        <p>{movieObj.duration}</p>
+                        <p>{movie.release_date}</p>
+                        <p>
+                        {movie.genres && movie.genres.map(genre => {
+                            return genre.name + ' | ';
+                        })}
+                        </p>
+                        <p>{movie.runtime && formatRuntime(movie.runtime) }</p>
                     </div>
                     <div className='detail-row-two'>
-                        <RatingIcon rating={(movieObj.vote_average)*10} /> 
-                        <img className="heartIcon" src={ heartIcon } alt="fav"></img>
+                        <RatingIcon rating={Math.round(movie.vote_average * 10)} /> 
+                        <button style={{ backgroundColor: 'transparent',border: 'none'}}className="heartIcon" onClick={toggleFav}>
+                            {isFav ? <img src={whiteHeartIcon} alt="fav" /> : <img src={yellowHeartIcon} alt="fav" />}
+                        </button>
+                        {/* trailerbtn, but seems unnessasary */}
+                        {/* <button 
+                            className="play-trailer"
+                            onClick={() => {
+                                const trailerSection = document.getElementById('trailer');
+                                if (trailerSection) {
+                                trailerSection.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                            style={{
+                                backgroundColor: 'transparent',
+                                border: 'none',
+                            }}
+                            >
+                            <img src={playBtn} alt="play-trailer-btn" /> 
+                        </button>*/}
+                    </div> 
+                    <div className='overview'>
+                        <p><strong>Director: </strong> {movie.credits && getDirector(movie.credits.crew)}</p>
+                        <p><strong>Overview</strong></p>
+                        <p>{movie.overview}</p>
                     </div>
-                    <div>
-                        <p><strong>Director</strong> {movieObj.director}</p>
-                        <p>Overview</p>
-                        <p>{movieObj.overview}</p>
+                    <div className='trailer' id='trailer'>
+                        <YouTube
+                            videoId={movie.videos && getTrailerKey(movie.videos.results)}
+                            opts={{ width: '90%' }}
+                        />
                     </div>
 
                 </div>

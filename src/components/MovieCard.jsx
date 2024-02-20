@@ -39,6 +39,7 @@ const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => 
         setIsFav(prevIsFav => !prevIsFav); 
     };
     
+    const linkToUrl = '/movie-details/' + movieId;
     return (
         <article className='movie-card'>
             <div className="img-shadow"></div>
@@ -47,7 +48,7 @@ const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => 
                 {hovered && (
                     <div className="hover-layer">
                         <p className="movie-intro">{intro.split(' ').slice(0, 25).join(' ')}...</p>
-                        <Link to="#" className="more-info-btn">More Info</Link>
+                        <Link to={linkToUrl} className="more-info-btn">More Info</Link>
                     </div>
                 )}
             </div>
@@ -58,7 +59,7 @@ const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => 
                 <RatingIcon rating={rating} />
             </div>
             <div className='movie-short-info'>
-                <p className="movie-title">{title}</p>
+                <Link to={linkToUrl}> <p className="movie-title">{title}</p> </Link>
                 <p className="movie-date">{releaseDate}</p>
             </div>
 
