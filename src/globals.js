@@ -1,1 +1,1 @@
-export const APP_FOLDER_NAME = "movie-wizlen";
+export const APP_FOLDER_NAME = "wizlen-movieDB";
