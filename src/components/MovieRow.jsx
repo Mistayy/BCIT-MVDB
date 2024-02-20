@@ -31,19 +31,27 @@ function MovieRow({category}) {
         }
       },
       {
-        breakpoint: 900,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
         }
       },
       {
-        breakpoint: 700,
+        breakpoint: 800,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
         }
-      }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+
     ]
   };
 

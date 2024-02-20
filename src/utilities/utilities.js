@@ -27,11 +27,21 @@ function formatRuntime(minutes) {
 }
 function getTrailerKey(videos){
     var trailer = videos.find(item => item.type === "Trailer");
-    return trailer.key;
+    if (trailer){
+      return trailer.key;  
+    }else{
+        return null
+    }
+    
 }
 function getDirector(crew){
     var director = crew.find(item => item.job === "Director");
-    return director.name;
+    if (director){
+        return director.name;
+    }else {
+        return null
+    }
+    
 }
 
 export { getYear,fetchMovieDataById, formatRuntime,getTrailerKey,getDirector}

@@ -17,7 +17,7 @@ const Nav = ({ handleShowHideNav }) => {
             <ul>
                 <li><NavLink to="/" >Movies</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
-                <li><NavLink to="/favourite">Favourite</NavLink></li>
+                <li><NavLink to="/favourite">Favourites</NavLink></li>
 
             </ul>
         </nav>

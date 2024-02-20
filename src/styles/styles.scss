@@ -19,6 +19,7 @@
 @use './components/movie-row';
 @use './components/movie-grid';
 @use './components/search-bar';
+@use './components/home';
 
 // Utilities
 @use './utilities/utility-classes';
@@ -26,3 +27,4 @@
 // Google Fonts - Import
 @import url('https://fonts.googleapis.com/css?family=Alatsi|Roboto:400,400i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');

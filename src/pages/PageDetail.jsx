@@ -23,7 +23,6 @@ const PageDetail = () => {
         const fetchMovieData = async () => {
             const fetchedMovie = await fetchMovieDataById(id);
             setMovie(fetchedMovie);
-            console.log(fetchedMovie)
         };
         fetchMovieData();
     }, [id]);
@@ -43,7 +42,13 @@ const PageDetail = () => {
     }, [movie.id]);
 
     const imgBaseUrl = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
-    var imgUrl = imgBaseUrl + movie.poster_path;
+    if (movie.poster_path){
+       var imgUrl = imgBaseUrl + movie.poster_path; 
+    }else{
+       var imgUrl = 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg'
+    }
+    
+    
     const backdropBaseUrl = 'https://image.tmdb.org/t/p/w1000_and_h450_multi_faces/';
     var backdropUrl = backdropBaseUrl + movie.backdrop_path;
 

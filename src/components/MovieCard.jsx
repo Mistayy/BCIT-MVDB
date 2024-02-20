@@ -12,7 +12,13 @@ import { appStorageName } from '../globals/globals';
 const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => {
 
     const imgBaseUrl = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
-    var imgUrl = imgBaseUrl + posterImagePath;
+    if (posterImagePath != null){
+        var imgUrl = imgBaseUrl + posterImagePath;
+    }else{
+        //default img
+        var imgUrl = 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg'
+    }
+    
     const [hovered, setHovered] = useState(false);
     const [isFav, setIsFav] = useState(false);
     const dispatch = useDispatch();
@@ -44,7 +50,7 @@ const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => 
         <article className='movie-card'>
             <div className="img-shadow"></div>
             <div className="img-wrapper" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <img src={imgUrl} alt="nowhere poster" />
+                <img src={imgUrl} alt="poster of the movie" />
                 {hovered && (
                     <div className="hover-layer">
                         <p className="movie-intro">{intro.split(' ').slice(0, 25).join(' ')}...</p>

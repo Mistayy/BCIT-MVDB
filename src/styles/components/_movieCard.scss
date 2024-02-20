@@ -1,12 +1,13 @@
 @use '../base/settings' as *;
-
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
 
 .movie-card{
     position:relative;
     width:$movieCardWidth;
     height:488px;
     padding:0;
-    margin:0;
+    margin:0 auto;
 
     img{
         position:absolute;

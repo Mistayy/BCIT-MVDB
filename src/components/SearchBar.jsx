@@ -25,7 +25,7 @@ const Search = () => {
                 value={searchTerm}
                 onChange={handleChange}
                 onKeyDown={handleKeyPress} 
-                placeholder='search movie title here..'
+                placeholder='search movie titles...'
         />
         </form>
         <i className="fas fa-search"></i>

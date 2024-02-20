@@ -34,7 +34,8 @@
 
     .slick-next::before,
     .slick-prev::before {
-        display:none;
+        font-size: 40px; 
+        color: $yellow; 
     }
 
     // banner card 
@@ -42,30 +43,32 @@
         position:relative;
         .info-wrap{
             position:absolute;
-            bottom: 50px;
+            bottom: 20px;
             left:0px;
             z-index: 999;
-            color:black;
+            color: $backgroundColor;
             background-color: rgba(255, 255, 255, 0.718);
-            font-family: $headingFont;
+            font-family: $movieTitleFont;
             padding:10px;
             padding-left:30px;
-            width:45%;
+            width:65%;
             border-bottom: 4px black solid;
             border-right: 4px black solid;
-
+            @media (min-width: em(700)){
+                bottom: 50px;
+                width:45%;
+            }
             .title {
-                font-size: 20px;
+                font-size: 25px;
                 font-weight: normal;
-                text-shadow: $yellow 1px 0 10px;
+                margin-bottom: 5px;
                 @media (min-width: em(700)){
-                    font-size: 35px; 
+                    font-size: 40px; 
                 }
             }
             .release-date{
                 font-size: 15px;
                 font-weight: normal;
-                text-shadow: $yellow 1px 0 10px;
                 @media (min-width: em(700)){
                     font-size: 20px; 
                 }

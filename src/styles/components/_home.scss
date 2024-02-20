@@ -1,0 +1,54 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.search-filter{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    @media (min-width: em(600)){
+        flex-direction: row;
+    }
+    .seach{
+        width:100%;
+        
+    }
+    .filter{
+        padding-right:50px;
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 30px;
+        gap:15px;
+
+        @media (min-width: em(600)){
+            margin-right:30px;
+            flex-direction: column;
+            gap:5px;
+        }
+        p{
+            color:$yellow;
+            font-size:20px;
+            padding-top:10px;
+            margin-bottom: 5px;
+        }
+        select{
+            padding-top:2px;
+            background-color: #3b3640;
+            border: 2px solid $yellow;
+            border-radius: 25px;
+            color:white;
+            width:140px;
+            height:30px;
+            padding-left:5px;
+        }
+    }
+}
+
+.movie-category-wrapper{
+    .hidden{
+        display:none;
+    }
+}
