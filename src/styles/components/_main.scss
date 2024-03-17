@@ -5,6 +5,7 @@
 
 main {
     padding: $section-padding;
+    min-height: calc(100vh - ($header-height + $footer-height));
     section{
         padding:0 20px;
     }

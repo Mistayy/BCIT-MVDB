@@ -80,7 +80,7 @@
       left: 0;
       width: $movieCardWidth;
       height: $movieCardHeight;
-      background-color: rgba(0, 0, 0, 0.4); 
+      background-color: rgba(0, 0, 0, 0.555); 
       border-radius: $border-radius;
       display: flex;
       flex-direction: column;
@@ -110,6 +110,26 @@
   
   .more-info-btn:hover {
       background-color: #cccccc; /* Button background color on hover */
+  }
+
+  .explain-text{
+    display:none;
+  }
+  .explain-text p{
+    margin:0;
+    padding:0 10px;
+    color:black;
+  }
+
+  .heartIcon:hover + .explain-text{
+    position:absolute;
+    top:16px;
+    left:30px;
+    display:block;
+    background-color: $yellow;
+    border: none;
+    border-radius: 5px;
+    z-index:0!important;
   }
   
   }

@@ -8,6 +8,7 @@ footer {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    height:$footer-height;
     @media (min-width: em(600)){
         flex-direction: row;
     }

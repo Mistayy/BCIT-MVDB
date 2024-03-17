@@ -62,6 +62,9 @@ const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => 
             <button className="heartIcon" onClick={toggleFav}>
                 {isFav ? <img src={whiteHeartIcon} alt="fav" /> : <img src={yellowHeartIcon} alt="fav" />}
             </button>
+            <div className='explain-text'>
+                    <p>Add to Favorite</p>
+            </div>
             <div className="rating-icon-wrapper">
                 <RatingIcon rating={rating} />
             </div>

@@ -1,8 +1,10 @@
 // Search.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate} from "react-router-dom";
+
 
 const Search = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleChange = (e) => {
@@ -12,7 +14,8 @@ const Search = () => {
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      window.location.href = `wizlen-movieDB/search/${searchTerm}`;
+      // window.location.href = `wizlen-movieDB/search/${searchTerm}`;
+      navigate(`/search/${searchTerm}`);
     }
   };
 
