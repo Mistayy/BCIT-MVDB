@@ -23,7 +23,7 @@ const PageHome = () => {
 
     return (
         <main>
-            <section>
+            <section className='banner-section'>
                 <Banner />
             </section>
             <section className='search-filter'>

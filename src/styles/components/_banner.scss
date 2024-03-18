@@ -1,9 +1,16 @@
 @use '../base/settings' as *;
 @use '../utilities/functions' as *;
 @use '../utilities/mixins' as *;
+
+.banner-section{
+    margin:0;
+    padding:0;
+}
 .banner-wrapper{
+    width:100%;
     .slider-container{
         padding-bottom:50px;
+        margin:0 auto;
     }
 
     .slick-dots li button:before{
@@ -20,59 +27,89 @@
     }
 
     .slick-slide img{
-        margin:0 auto;
-        width:100%;
+        margin:0;
+        margin-left:20%;
+        width:80%;
+        border-radius: 10px;
     }
 
     .slick-next{
-        right:30px;
+        right:15px;
     }
     .slick-prev{
         z-index: 99;
-        left:10px;
+        left:-3px;
     }
 
     .slick-next::before,
     .slick-prev::before {
-        font-size: 40px; 
+        font-size: 3.5vw; 
         color: $yellow; 
     }
 
     // banner card 
-    .img-wrapper{
+    .banner-card{
         position:relative;
+
+        .img-gradient{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background: rgb(255,255,255);
+            background: linear-gradient(90deg, rgba(255,255,255,0.004639355742296902) 0%, rgba(40,40,43,1) 20%, rgba(40,40,43,1) 30%, rgba(40,40,43,0) 100%);
+            z-index:50;
+        } 
         .info-wrap{
             position:absolute;
-            bottom: 20px;
-            left:0px;
-            z-index: 999;
-            color: $backgroundColor;
-            background-color: rgba(255, 255, 255, 0.718);
-            font-family: $movieTitleFont;
-            padding:10px;
-            padding-left:30px;
-            width:65%;
-            border-bottom: 4px black solid;
-            border-right: 4px black solid;
-            @media (min-width: em(700)){
-                bottom: 50px;
-                width:45%;
+            width:45%;
+            z-index:999;
+            bottom:3vw;
+            left:5vw;
+            .title{
+                font-family: $headingFont;
+                font-size:3.5vw;
+                color:$yellow;
             }
-            .title {
-                font-size: 25px;
-                font-weight: normal;
-                margin-bottom: 5px;
-                @media (min-width: em(700)){
-                    font-size: 40px; 
+            .intro{
+                display:none;
+                font-size:1.2vw;
+                color:white;
+                font-family: $bodyFont;
+                @media (min-width: em(800)){
+                    display: block;
+                    font-size:13px;
+                }
+                @media (min-width: em(1000)){
+                    display: block;
+                    font-size:20px;
                 }
             }
             .release-date{
-                font-size: 15px;
-                font-weight: normal;
-                @media (min-width: em(700)){
-                    font-size: 20px; 
+                font-size:13px;
+                color:$yellow;
+                @media (min-width: em(800)){
+                    font-size:13px;
+                }
+                @media (min-width: em(1000)){
+                    font-size:20px;
                 }
             }
+        }  
+
+        .more-info-btn {
+            background-color: #ffffff; /* Button background color */
+            color: #000000; /* Button text color */
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease; /* Optional: Adding transition effect */
+            font-size:15px;
         }
+        
+        .more-info-btn:hover {
+            background-color: #cccccc; /* Button background color on hover */
+        }
+
     }
 }

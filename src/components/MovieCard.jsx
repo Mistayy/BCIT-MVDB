@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { addFav, deleteFav } from '../features/favs/favsSlice';
 import { appStorageName } from '../globals/globals';
 import React from 'react';
-
+import {formatDate} from '../utilities/utilities';
 const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => {
 
     const imgBaseUrl = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
@@ -70,7 +70,7 @@ const MovieCard = ({rating,title,releaseDate,posterImagePath,intro,movieId}) => 
             </div>
             <div className='movie-short-info'>
                 <Link to={linkToUrl}> <p className="movie-title">{title}</p> </Link>
-                <p className="movie-date">{releaseDate}</p>
+                <p className="movie-date">{formatDate(releaseDate)}</p>
             </div>
 
         </article>

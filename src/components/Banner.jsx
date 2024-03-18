@@ -5,12 +5,13 @@ import "slick-carousel/slick/slick-theme.css";
 import BannerCard from "./BannerCard";
 import { useState, useEffect } from 'react';
 import { movieDBoptions } from "../globals/globals";
+import {formatDate} from "../utilities/utilities";
 
 function Banner() {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay:true,
+    autoplay:false,
     autoplaySpeed:3000,
     speed: 500,
     slidesToShow: 1,
@@ -34,8 +35,10 @@ function Banner() {
                 <BannerCard
                   key={index}
                   title={movie.title}
-                  releaseDate={movie.release_date}
+                  releaseDate={formatDate(movie.release_date)}
                   backDropImagePath={movie.backdrop_path}
+                  intro={movie.overview}
+                  movieId={movie.id}
                 />
               ))}
         </Slider>

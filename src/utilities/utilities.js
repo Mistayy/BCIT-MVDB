@@ -25,6 +25,19 @@ function formatRuntime(minutes) {
     const mins = minutes % 60;
     return `${hours}h ${mins}min`;
 }
+
+function formatDate(inputDate) {
+    // Split the input date string into year, month, and day
+    const [year, month, day] = inputDate.split('-');
+
+    // Convert month from numeric to textual representation
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthText = months[parseInt(month, 10) - 1];
+
+    // Format the date as "yyyy mmm dd"
+    return `${year} ${monthText} ${day}`;
+}
+
 function getTrailerKey(videos){
     var trailer = videos.find(item => item.type === "Trailer");
     if (trailer){
@@ -44,4 +57,4 @@ function getDirector(crew){
     
 }
 
-export { getYear,fetchMovieDataById, formatRuntime,getTrailerKey,getDirector}
+export { getYear,fetchMovieDataById, formatRuntime,getTrailerKey,getDirector,formatDate}
