@@ -45,7 +45,7 @@ function MovieRow({category}) {
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 520,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

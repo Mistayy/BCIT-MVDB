@@ -63,7 +63,7 @@ const PageDetail = () => {
     };
 
     return (
-        <main style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backdropUrl})`, backgroundSize: 'cover' }}>
+        <main style={{ backgroundImage: `radial-gradient(circle, rgba(40,40,43,0.40800070028011204) 0%, rgba(40,40,43,0.7553396358543417) 46%, rgba(40,40,43,1) 100%), url(${backdropUrl})`, backgroundSize: 'cover' }}>
             <div className='page-wrapper'>
                 <div className="movie-poster">
                     <img src={ imgUrl } alt="nowhere poster"></img>

@@ -13,15 +13,20 @@
         margin:0 auto;
     }
 
-    .slick-dots li button:before{
-        font-size:10px;
-        color:white;
+    .slick-dots li {
+        margin:0;
+        @media (min-width: em(800)){
+            margin:0 5px;
+        }
+        button:before{
+            font-size:10px;
+            color:white;
+            @media (min-width: em(800)){
+                font-size:15px;
+            }
+        }
+    }
 
-    }
-    .slick-dots li button:before{
-        font-size:15px;
-        color:white;
-    }
     .slick-dots li.slick-active button:before{
         color:$yellow;
     }
@@ -34,17 +39,29 @@
     }
 
     .slick-next{
-        right:15px;
+        right: calc(20px - $slidingDotBannerOne);
+        @media (min-width: em(800)){
+            right: calc($slidingDotBannerTwo - 20px); 
+        }
+        @media (min-width: em(1000)){
+            right: calc($slidingDotBannerThree - 20px); 
+        }
     }
     .slick-prev{
         z-index: 99;
-        left:-3px;
+        left:0;
     }
 
     .slick-next::before,
     .slick-prev::before {
-        font-size: 3.5vw; 
+        font-size: $slidingDotBannerOne; 
         color: $yellow; 
+        @media (min-width: em(800)){
+            font-size: $slidingDotBannerTwo; 
+        }
+        @media (min-width: em(1000)){
+            font-size: $slidingDotBannerThree; 
+        }
     }
 
     // banner card 

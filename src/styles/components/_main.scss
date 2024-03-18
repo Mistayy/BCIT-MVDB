@@ -7,7 +7,11 @@ main {
     padding: $section-padding;
     min-height: calc(100vh - ($header-height + $footer-height));
     section{
-        padding:0 20px;
+        padding:0 10px;
+        @media (min-width: em(800)){
+            padding:0 20px;
+        }
+
     }
 
     a, a:focus, a:active,a:hover{

@@ -17,9 +17,18 @@ $movieTitleFont: 'Rozha One',serif;
 
 //width & height
 $movieCardWidth: 200px;
+$movieCardWidthMobile: 150px;
 $movieCardHeight: $movieCardWidth * 1.5;
 $movieTitleTop: $movieCardHeight + 40;
 $movieDateTop:$movieCardHeight + 100;
+
+$slidingDotBannerOne:20px;
+$slidingDotBannerTwo:30px;
+$slidingDotBannerThree:40px;
+
+$slidingrowOne:18px;
+$slidingrowTwo:25px;
+$slidingrowThree:35px;
 
 $footer-height: 65px;
 $header-height: 70px;
