@@ -35,7 +35,7 @@ function formatDate(inputDate) {
     const monthText = months[parseInt(month, 10) - 1];
 
     // Format the date as "yyyy mmm dd"
-    return `${year} ${monthText} ${day}`;
+    return `${monthText} ${day}, ${year}`;
 }
 
 function getTrailerKey(videos){
